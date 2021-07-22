@@ -22,16 +22,8 @@ def getRC(recent_changes):
     RECENTCHANGES = DATA['query']['recentchanges']
 
     for rc in RECENTCHANGES:
-        bruh_string = "**" + (str(rc['title']) + "**" + " at " + str(rc['timestamp']) + " by " + str(rc['user']) + "|| **Comments:** " + str(rc['comment']))
-    f = open("changes.txt", "r")
-    compare = f.read()
-    f.close()
-    if (compare != bruh_string):
-        f2 = open("changes.txt", "w")
-        f2.write(bruh_string)
-        f2.close()
-        print(bruh_string)
-        return bruh_string
+        bruh_string = "**" + (str(rc['title']) + "**" + " at " + str(rc['timestamp']) + " by " + str(rc['user']) + " || **Comments:** " + str(rc['comment']))
+    return bruh_string
     time.sleep(10)
 
 def getRCRu(recent_changes):
@@ -54,16 +46,8 @@ def getRCRu(recent_changes):
     RECENTCHANGES = DATA['query']['recentchanges']
 
     for rc in RECENTCHANGES:
-        bruh_string = "**" + (str(rc['title']) + "**" + " at " + str(rc['timestamp']) + " by " + str(rc['user']) + "|| **Comments:** " + str(rc['comment']))
-    f = open("changesRU.txt", "r")
-    compare = f.read()
-    f.close()
-    if (compare != bruh_string):
-        f2 = open("changesRU.txt", "w")
-        f2.write(bruh_string)
-        f2.close()
-        print(bruh_string)
-        return bruh_string
+        bruh_string = "**" + (str(rc['title']) + "**" + " at " + str(rc['timestamp']) + " by " + str(rc['user']) + " || **Comments:** " + str(rc['comment']))
+    return bruh_string
     time.sleep(10)
 
 def getRCPl(recent_changes):
@@ -86,16 +70,8 @@ def getRCPl(recent_changes):
     RECENTCHANGES = DATA['query']['recentchanges']
 
     for rc in RECENTCHANGES:
-        bruh_string = "**" + (str(rc['title']) + "**" + " at " + str(rc['timestamp']) + " by " + str(rc['user']) + "|| **Comments:** " + str(rc['comment']))
-    f = open("changesPL.txt", "r")
-    compare = f.read()
-    f.close()
-    if (compare != bruh_string):
-        f2 = open("changesPL.txt", "w")
-        f2.write(bruh_string)
-        f2.close()
-        print(bruh_string)
-        return bruh_string
+        bruh_string = "**" + (str(rc['title']) + "**" + " at " + str(rc['timestamp']) + " by " + str(rc['user']) + " || **Comments:** " + str(rc['comment']))
+    return bruh_string
     time.sleep(10)
 
 class MyClient(discord.Client):
@@ -105,24 +81,32 @@ class MyClient(discord.Client):
         print(self.user.id)
         print('------')
         print("it has to reach here")
-        channel = client.get_channel(748233192523300976)
-        channel2 = client.get_channel(748232391256047616)
-        channel3 = client.get_channel(748232966571819008)
+        channelEN = client.get_channel(867622165397897266)
+        channelRU = client.get_channel(844898534184189973)
+        channelPL = client.get_channel(867622185492545568)
         while True:
+            messageEN = await channelEN.fetch_message(channelEN.last_message_id)
+            messageRU = await channelRU.fetch_message(channelRU.last_message_id)
+            messagePL = await channelPL.fetch_message(channelPL.last_message_id)
+            messageEN1 = messageEN.content.strip()
+            messageRU1 = messageRU.strip()
+            messagePL1 = messagePL.strip()
             print("Reaches here!")
             recent_changes = None
             nice_cock_bro = getRC(recent_changes)
             nice_tits_bro = getRCRu(recent_changes)
             nice_balls_bro = getRCPl(recent_changes)
-            if nice_cock_bro != None and nice_cock_bro != "":
+            if nice_cock_bro != None and nice_cock_bro != messageEN.content:
                 print("letsss gooo")
                 print(nice_cock_bro)
-                await channel.send(nice_cock_bro)
-            if nice_tits_bro != None and nice_tits_bro != "":
+                await channelEN.send(nice_cock_bro)
+            print(nice_tits_bro)
+            print(messageRU.content)
+            if nice_tits_bro != None and nice_tits_bro != messageRU.content:
                 print("cyka blyat")
-                await channel2.send(nice_tits_bro)
-            if nice_balls_bro != None and nice_balls_bro != "":
+                await channelRU.send(nice_tits_bro)
+            if nice_balls_bro != None and nice_balls_bro != messagePL.content:
                 print("femboy")
-                await channel3.send(nice_balls_bro)
+                await channelPL.send(nice_balls_bro)
 client = MyClient()
 client.run('TOKEN')
