@@ -81,32 +81,30 @@ class MyClient(discord.Client):
         print(self.user.id)
         print('------')
         print("it has to reach here")
-        channelEN = client.get_channel(867622165397897266)
-        channelRU = client.get_channel(844898534184189973)
-        channelPL = client.get_channel(867622185492545568)
+        channelEN = client.get_channel(CHANNEL TOKEN)
+        channelRU = client.get_channel(CHANNEL TOKEN)
+        channelPL = client.get_channel(CHANNEL TOKEN)
         while True:
             messageEN = await channelEN.fetch_message(channelEN.last_message_id)
             messageRU = await channelRU.fetch_message(channelRU.last_message_id)
             messagePL = await channelPL.fetch_message(channelPL.last_message_id)
             messageEN1 = messageEN.content.strip()
-            messageRU1 = messageRU.strip()
-            messagePL1 = messagePL.strip()
+            messageRU1 = messageRU.content.strip()
+            messagePL1 = messagePL.content.strip()
             print("Reaches here!")
             recent_changes = None
-            nice_cock_bro = getRC(recent_changes)
-            nice_tits_bro = getRCRu(recent_changes)
-            nice_balls_bro = getRCPl(recent_changes)
-            if nice_cock_bro != None and nice_cock_bro != messageEN.content:
+            nice_cock_bro = getRC(recent_changes).strip()
+            nice_tits_bro = getRCRu(recent_changes).strip()
+            nice_balls_bro = getRCPl(recent_changes).strip()
+            if nice_cock_bro != None and nice_cock_bro != messageEN1:
                 print("letsss gooo")
                 print(nice_cock_bro)
                 await channelEN.send(nice_cock_bro)
-            print(nice_tits_bro)
-            print(messageRU.content)
-            if nice_tits_bro != None and nice_tits_bro != messageRU.content:
+            if nice_tits_bro != None and nice_tits_bro != messageRU1:
                 print("cyka blyat")
                 await channelRU.send(nice_tits_bro)
-            if nice_balls_bro != None and nice_balls_bro != messagePL.content:
+            if nice_balls_bro != None and nice_balls_bro != messagePL1:
                 print("femboy")
                 await channelPL.send(nice_balls_bro)
 client = MyClient()
-client.run('TOKEN')
+client.run(TOKEN) 
