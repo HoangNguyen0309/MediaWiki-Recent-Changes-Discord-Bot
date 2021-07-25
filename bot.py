@@ -16,6 +16,8 @@ S = requests.Session()
 
 URL = "https://pl.scpslgame.com/api.php"
 
+# change rclimit to get number of recent changes
+
 PARAMS = {
     "format": "json",
     "rcprop": "title|ids|flags|user|timestamp|sizes|comment",
