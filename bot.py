@@ -1,11 +1,5 @@
 """
     get_recent_changes.py
-
-    MediaWiki API Demos
-    Demo of `RecentChanges` module: Get the three most recent changes with
-    sizes and flags
-
-    MIT License
 """
 
 import requests
