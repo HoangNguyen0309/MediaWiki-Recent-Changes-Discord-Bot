@@ -4,4 +4,4 @@ Using the MediaWiki API, the bot automatically gets recent changes to the wiki e
 
 d-bot.py contains the bot for discord
 bot.py contains the code to get recent changes using MediaWiki api.
-The .txt files are to save the last recent change for comparision.
+Bot works by comparing last text message in channel and compare them to most recent change to the wiki.
