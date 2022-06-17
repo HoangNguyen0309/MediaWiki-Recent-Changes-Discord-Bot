@@ -27,6 +27,7 @@ DATA = R.json()
 
 RECENTCHANGES = DATA['query']['recentchanges']
 
+# print recent changes
 for rc in RECENTCHANGES:
     bruh_string = (str(rc['title']) + " at " + str(rc['timestamp']) + " by " + str(rc['user']) + " Comments: " + str(rc['comment']))
 
