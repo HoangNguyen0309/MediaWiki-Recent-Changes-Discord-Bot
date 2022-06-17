@@ -8,6 +8,7 @@ bruh_string = None
 
 S = requests.Session()
 
+# chnage URL to /api.php
 URL = "https://pl.scpslgame.com/api.php"
 
 # change rclimit to get number of recent changes
