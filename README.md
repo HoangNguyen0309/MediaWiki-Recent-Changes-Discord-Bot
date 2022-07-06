@@ -7,5 +7,3 @@ bot.py contains the code to get recent changes using MediaWiki api. <br>
 Bot works by comparing last text message in channel and compare them to most recent change to the wiki. <br>
 
 pip install requirements.txt to install dependencies
- 
- 
