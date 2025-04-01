@@ -11,7 +11,7 @@ def getRC(recent_changes):
         "rcprop": "title|ids|flags|user|timestamp|sizes|comment",
         "list": "recentchanges",
         "action": "query",
-        "rclimit": "1",
+        "rclimit": "1",     
         "rctype": "edit|new",
         "rcshow": "!minor|!anon"
     }
